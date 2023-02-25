@@ -35,41 +35,72 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<VBox prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
   <children>
-      <AnchorPane prefHeight="500.0" prefWidth="650.0">
+      <AnchorPane prefHeight="700.0" prefWidth="750.0">
          <children>
-            <TabPane layoutY="20.0" prefHeight="481.0" prefWidth="650.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane layoutY="23.0" prefHeight="700.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="File Upload">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="322.0" prefWidth="654.0">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="322.0" prefWidth="680.0">
                            <children>
-                              <Button fx:id="fileUpload" layoutX="249.0" layoutY="88.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="139.0" text="Select file to upload" />
-                              <Button fx:id="uploadBtn" layoutX="296.0" layoutY="132.0" mnemonicParsing="false" onAction="#onBtnClick" text="Upload" />
-                              <Text fx:id="statusMsg" layoutX="285.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="78.0" />
+                              <Button fx:id="uploadBtn" layoutX="263.0" layoutY="94.0" mnemonicParsing="false" onAction="#uploadFiles" prefHeight="25.0" prefWidth="117.0" text="Upload Files" />
                               <Label layoutX="245.0" layoutY="204.0" text="Create Tracks in a file">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="tracks" layoutX="197.0" layoutY="247.0" onMouseClicked="#setTrackValue" prefHeight="25.0" prefWidth="89.0" promptText="Tracks" />
+                              <ComboBox fx:id="tracks" layoutX="197.0" layoutY="247.0" onAction="#setTrackValue" onMouseClicked="#setTrackValue" prefHeight="25.0" prefWidth="89.0" promptText="Tracks" />
                               <Label layoutX="85.0" layoutY="251.0" prefHeight="17.0" prefWidth="103.0" text="Select No of tracks" />
-                              <Button fx:id="generateTrackBtn" layoutX="354.0" layoutY="247.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Generate" />
+                              <Button fx:id="generateTrackBtn" layoutX="274.0" layoutY="301.0" mnemonicParsing="false" onAction="#generateTracks" prefHeight="25.0" prefWidth="90.0" text="Generate" />
+                              <TextField fx:id="trackStartNum" layoutX="473.0" layoutY="247.0" prefHeight="25.0" prefWidth="41.0" text="1" />
+                              <Label layoutX="344.0" layoutY="251.0" prefHeight="17.0" prefWidth="136.0" text="Select starting track no" />
+                              <Label fx:id="statusMsgBelow" layoutX="21.0" layoutY="340.0" prefHeight="17.0" prefWidth="613.0" textAlignment="CENTER" />
+                              <Label fx:id="statusMsg" layoutX="12.0" layoutY="174.0" prefHeight="17.0" prefWidth="631.0" textAlignment="CENTER" />
+                           
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
                 <Tab text="Multiwave UI">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane prefHeight="520.0" prefWidth="660.0">
+                           <children>
+                            
+                            <HBox alignment="TOP_RIGHT" layoutX="413.0" layoutY="2.0" prefHeight="25.0" prefWidth="230.0" spacing="10.0">
+                              <Button layoutX="434.0" layoutY="2.0" mnemonicParsing="false" onAction="#createProject" prefHeight="25.0" prefWidth="97.0" text="Create Project" />
+                              <Button layoutX="539.0" layoutY="2.0" mnemonicParsing="false" onAction="#uploadProject" prefHeight="25.0" prefWidth="105.0" text="Upload Project" />
+                           
+                            </HBox>
+                               <AnchorPane layoutY="53.0">
+                                 <children>
+                                    <ScrollPane fx:id="scrollPane"  layoutX="1.0" layoutY="53.0" prefHeight="390.0" prefWidth="650.0" />
+                                                          
+                                 </children>
+                              </AnchorPane>
+                          <VBox layoutX="3.0" layoutY="2.0">
+                         
+                                   <HBox fx:id="projectBar" layoutY="-36.0" prefHeight="30.0" prefWidth="169.0" spacing="20">
+                                 <children>
+                                    <Button fx:id="projectBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" />
+                                    <Label fx:id="projectName" prefHeight="25.0" prefWidth="143.0" />
+                                 </children>
+                              </HBox>
+                                <HBox fx:id="zoomBox" layoutX="354.0" layoutY="36.0" prefHeight="35.0" prefWidth="303.0" spacing="10.0" />
+                          
+                              </VBox>
+                           </children></AnchorPane>
                   </content>
                 </Tab>
               </tabs>
