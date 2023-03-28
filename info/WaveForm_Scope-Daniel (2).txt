@@ -1,0 +1,25 @@
+Any sound file can be used for generating wave form
+
+- Database - 
+Input source - list of samples (of any types of signal) - Bytestreams
+
+	- After processing, the file needs to be stored in JSON format, in a new folder, with followingitems
+
+The group meta data needs to be saved as well
+	Group_Info : GroupA-GroupA1-SubGroup1	
+	~~Track Id : <track id>
+	Start_Time : <time in seconds/nano>
+	End_Time : <time in seconds/nano>
+
+-- Zoom feature with ctrl+ mouse wheel too
+--Load file Feature - so that when user loads the JSON file, it selects the track shows the relevant samples as per the timings
+			
+
+-- Actual callback method is TBD 
+
+-- Sample data list (input) which needs to be displayed and operated in the app
+
+<GROUPS> == <List of Tracks> -> can be multifolder like Group within a Group
+-- When dragged in a group, it will be CUT not COPY
+
+-- When a group is deleted, all the child tracks will be shifted to parent Group

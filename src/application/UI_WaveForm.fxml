@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -77,35 +78,44 @@
                   <content>
                     <AnchorPane prefHeight="520.0" prefWidth="660.0">
                            <children>
+                              <VBox layoutX="3.0" layoutY="2.0" prefHeight="113.0" prefWidth="744.0">
+                                 <children>
+                                <VBox prefHeight="70.0" prefWidth="639.0">
+                               
+                                         <HBox fx:id="projectBar" layoutY="-36.0" prefHeight="30.0" prefWidth="654.0" spacing="5.0">
+                                       <children>
+                                             <ComboBox fx:id="addData" prefHeight="25.0" prefWidth="124.0" promptText="+" />
+                                          <Label fx:id="projectName" prefHeight="25.0" prefWidth="382.0" />
+                                       </children>
+                                    </HBox>
+                                      <HBox fx:id="zoomBox" layoutX="354.0" layoutY="36.0" prefHeight="39.0" prefWidth="575.0" spacing="10.0" />
+                                    </VBox>
+                              <HBox fx:id="sliderBox" prefHeight="43.0" prefWidth="469.0">
+                                       <VBox.margin>
+                                          <Insets left="170.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
                             
-                            <HBox alignment="TOP_RIGHT" layoutX="413.0" layoutY="2.0" prefHeight="25.0" prefWidth="230.0" spacing="10.0">
+                            <HBox alignment="TOP_RIGHT" layoutX="413.0" layoutY="2.0" prefHeight="25.0" prefWidth="334.0" spacing="10.0">
                               <Button layoutX="434.0" layoutY="2.0" mnemonicParsing="false" onAction="#createProject" prefHeight="25.0" prefWidth="97.0" text="Create Project" />
                               <Button layoutX="539.0" layoutY="2.0" mnemonicParsing="false" onAction="#uploadProject" prefHeight="25.0" prefWidth="105.0" text="Upload Project" />
                            
                             </HBox>
-                               <AnchorPane layoutY="53.0">
+                               <AnchorPane layoutY="80.0" prefHeight="447.0" prefWidth="751.0">
                                  <children>
-                                    <ScrollPane fx:id="scrollPane"  layoutX="1.0" layoutY="53.0" prefHeight="390.0" prefWidth="650.0" />
+                                    <ScrollPane fx:id="scrollPane" layoutX="1.0" layoutY="2.0" prefHeight="412.0" prefWidth="750.0">
+                                       </ScrollPane>
                                                           
                                  </children>
                               </AnchorPane>
-                          <VBox layoutX="3.0" layoutY="2.0">
-                         
-                                   <HBox fx:id="projectBar" layoutY="-36.0" prefHeight="30.0" prefWidth="169.0" spacing="20">
-                                 <children>
-                                    <Button fx:id="projectBtn" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" />
-                                    <Label fx:id="projectName" prefHeight="25.0" prefWidth="143.0" />
-                                 </children>
-                              </HBox>
-                                <HBox fx:id="zoomBox" layoutX="354.0" layoutY="36.0" prefHeight="35.0" prefWidth="303.0" spacing="10.0" />
-                          
-                              </VBox>
                            </children></AnchorPane>
                   </content>
                 </Tab>
               </tabs>
             </TabPane>
-            <Text fx:id="closeBtn" fontSmoothingType="LCD" layoutX="617.0" layoutY="16.0" onMouseClicked="#closeApp" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+            <Text fx:id="closeBtn" fontSmoothingType="LCD" layoutX="724.0" layoutY="20.0" onMouseClicked="#closeApp" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
