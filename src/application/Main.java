@@ -22,6 +22,7 @@ public class Main extends Application {
 			Parent root = FXMLLoader.load(getClass().getResource("UI_WaveForm.fxml"));
 
 	        primaryStage.setScene(new Scene(root,650,500));
+	       
 	        primaryStage.show();
        
 	      
